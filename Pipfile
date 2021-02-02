@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pyspark = "*"
+pyspark-stubs = "==3.0.0.post1"
+google-cloud-firestore = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
