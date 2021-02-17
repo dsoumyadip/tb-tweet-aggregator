@@ -76,7 +76,7 @@ df2 = df1.filter(df1.update_type == 'batch')
 
 logging.info(f"Total number of tweets to be processed for aggregation {df2.count()}")
 
-logging.info(f"Calcuting number of total tweets by each user...")
+logging.info(f"Calculating number of total tweets by each user...")
 total_tweets_till_now = df2.groupBy(df2.username).count()
 # total_tweets_till_now.show()
 
@@ -138,7 +138,8 @@ num_tweets_each_hour_sentimental_pivot.toPandas()
 df3 = num_tweets_each_hour
 df4 = num_tweets_each_hour_sentimental_pivot
 joined_df = df3 \
-    .join(df4, ((df3.author_id == df4.author_id_b) & (df3.window_start == df4.window_start_b) & (df3.window_end == df4.window_end_b)))
+    .join(df4, ((df3.author_id == df4.author_id_b) & (df3.window_start == df4.window_start_b) & (
+        df3.window_end == df4.window_end_b)))
 
 joined_df_sub = joined_df \
     .select("username", "author_id", "window", "window_start", "window_end", "tot_cnt", "negative", "neutral",

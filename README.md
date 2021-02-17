@@ -12,4 +12,11 @@ There are two type of job. Batch and stream.
       `spark-submit --master SPARK_MASTER_IP:PORT batch/aggregation-historical-tweets.py -- "gs://twitter-battle-2/historical-tweets.json"`  
       **Type of aggregations:**
         * Historical total tweet count by each handle.
-        * Historical tweet count by 1 hour window. (Total + tweet sentiment level)
+        * Historical tweet count by 1 hour window. (Total + tweet sentiment level)  
+    
+* **STREAMING:**
+    This Dataflow(Apache Beam) job reads incoming streamed tweets from PubSub and do sentiment aggregation over fixed time window.  
+  **HOW TO RUN:**  
+  `python streaming/streaming-aggretaion.py`
+  
+  
